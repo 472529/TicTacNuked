@@ -9,7 +9,8 @@ public class GridSpace : MonoBehaviour
     public Button button;
     public TMP_Text buttonText;
     public string playerSide;
-    bool IsNuke;
+    bool IsNuke = false;
+    bool IsNukePressed = false;
 
     private GameController gameController;
 
@@ -20,14 +21,23 @@ public class GridSpace : MonoBehaviour
 
     public void SetSpace()
     {
-        buttonText.text = gameController.GetPlayerSide();
-        button.interactable = false;
-        gameController.EndTurn();
+        if (IsNuke == false)
+        {
+            buttonText.text = gameController.GetPlayerSide();
+            IsNuke = false;
+            button.interactable = false;
+            gameController.EndTurn();
+        }
+        else
+        {
+            Nuke();
+        }
     }
 
     public void Nuke()
     {
-        button.interactable = false;
+        buttonText.text = "";
         IsNuke = true;
+        button.interactable = false;
     }
 }

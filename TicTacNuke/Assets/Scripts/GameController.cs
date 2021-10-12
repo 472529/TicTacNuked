@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
             GameOver();
         }
 
-        if(moveCount >= 9)
+        if(moveCount >= 10)
         {
             gameOverPanel.SetActive(true);
             SetGameOverText("Its a draw!");
