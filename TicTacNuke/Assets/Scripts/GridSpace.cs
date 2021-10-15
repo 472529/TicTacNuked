@@ -23,6 +23,7 @@ public class GridSpace : MonoBehaviour
     {
         if (IsNuke == false)
         {
+            //change this to right click for nuke left click for side idea
             buttonText.text = gameController.GetPlayerSide();
             IsNuke = false;
             button.interactable = false;
