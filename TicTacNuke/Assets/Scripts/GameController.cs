@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
     public GameObject gameOverPanel;
     public TMP_Text gameOverText;
     public bool toggle;
+    public GridSpace gridSpace;
 
     private string playerSide;
     private int moveCount;
@@ -83,7 +84,7 @@ public class GameController : MonoBehaviour
             GameOver();
         }
 
-        if(moveCount >= 10)
+        if(moveCount >= 99)
         {
             gameOverPanel.SetActive(true);
             SetGameOverText("Its a draw!");
@@ -115,6 +116,8 @@ public class GameController : MonoBehaviour
     {
         playerSide = "X";
         moveCount = 0;
+        gridSpace.player1Nukes = 2;
+        gridSpace.player2Nukes = 2;
         gameOverPanel.SetActive(false);
         SetBoardInteractable(true);
 
