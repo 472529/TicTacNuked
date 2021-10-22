@@ -103,7 +103,7 @@ public class GameController : MonoBehaviour
     
     void ChangeSides()
     {
-        playerSide = (playerSide == "X") ? "O" : "X";
+        playerSide = (playerSide == "O") ? "X" : "O";
     }
 
     void SetGameOverText(string value)
